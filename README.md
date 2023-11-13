@@ -43,7 +43,7 @@ import matplotlib.pyplot as plt
 text_image = np.zeros((100,190),dtype = 'uint8')
 font = cv2.FONT_HERSHEY_SIMPLEX = 3
 cv2.putText(text_image,"Pooja ",(5,70),font,2,(255),5,cv2.LINE_AA)
-plt.title("Original Image")
+plt.title("Created_text")
 plt.imshow(text_image,'magma')
 plt.axis('off')
 ```
@@ -71,13 +71,13 @@ plt.axis('off')
 
 ## OUTPUT:
 ### Input Image
-
+![exp 11 created](https://github.com/poojaanbu0/OPENING--CLOSING/assets/119390329/36f735de-849a-4867-a2cc-86177459cfc5)
 
 ### Result of Opening
-
+![exp 11 open](https://github.com/poojaanbu0/OPENING--CLOSING/assets/119390329/01b016c0-1072-4251-a899-756b5fd7e3ab)
 
 ### Result of Closing
-
+![exp 11 close](https://github.com/poojaanbu0/OPENING--CLOSING/assets/119390329/3b4a80c0-e783-449e-abf2-66540c2d09f1)
 
 ## RESULT:
 Thus, the Opening and Closing operation is used in the image using python and OpenCV.

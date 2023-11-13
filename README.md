@@ -30,43 +30,37 @@ Print the output and end the program.
 Developed by : Pooja A
 Register number : 212222240072
 ```
-
-### Import the necessary packages
-```
+```python
+# Import the necessary packages
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-```
 
-### Create the Text using cv2.putText
-```
-text_image = np.zeros((100,190),dtype = 'uint8')
-font = cv2.FONT_HERSHEY_SIMPLEX = 3
-cv2.putText(text_image,"Pooja ",(5,70),font,2,(255),5,cv2.LINE_AA)
-plt.title("Created_text")
-plt.imshow(text_image,'magma')
-plt.axis('off')
-```
 
-### Create the structuring element
-```
-kernel = cv2.getStructuringElement(cv2.MORPH_CROSS,(7,7))
-```
+# Create the Text using cv2.putText
+img= np.zeros((350,1400),dtype ='uint8')
+font = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(img,'POOJA A',(15,200),font,5,(255),10,cv2.LINE_AA)
+cv2.imshow('created_text',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
-### Use Opening operation
-```
-opening_image = cv2.morphologyEx(text_image,cv2.MORPH_OPEN,kernel)
-plt.title("Opening")
-plt.imshow(opening_image,'magma')
-plt.axis('off')
-```
 
-### Use Closing Operation
-```
-closing_image = cv2.morphologyEx(text_image,cv2.MORPH_CLOSE,kernel)
-plt.title("Closing")
-plt.imshow(closing_image,'magma')
-plt.axis('off')
+# Create the structuring element
+struct_ele= np.ones((9,9),np.uint8)
+
+
+# Use Opening operation
+opening = cv2.morphologyEx(img,cv2.MORPH_OPEN,struct_ele)
+cv2.imshow('Opening',opening)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+# Use Closing Operation
+closing = cv2.morphologyEx(img,cv2.MORPH_CLOSE,struct_ele)
+cv2.imshow('Closing',closing)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 ```
 
 ## OUTPUT:
